@@ -20,7 +20,7 @@ Upon reviewing the three tools for deploying a local Kubernetes cluster for the 
 
 ## Demonstration
 
-You can familiarize yourself with the process of deploying a Kubernetes cluster using k3d [here](.doc/k3d.md).
+You can familiarize yourself with the process of deploying a Kubernetes cluster using k3d [here](./doc/k3d.md).
 
 [link to video](https://asciinema.org/a/XdYsLpd0n2F46dEzziceor0R8)
 
