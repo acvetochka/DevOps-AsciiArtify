@@ -23,18 +23,18 @@
 
 4. Переадресація портів
 
-```
+```powershell
 k port-forward -n demo svc/ambassador 8081:80
 ```
 
 5. Вивід версії додатку (в іншому вікні терміналу)
-```
+```powershell
 curl localhost:8081
 ```
 
 6. Завантаження зображення
 
-```
+```powershell
 wget -O <img-name> <img-url>
 curl -F 'image=@<img-name>' localhost:8081/img/
 ```
@@ -48,11 +48,11 @@ curl -F 'image=@<img-name>' localhost:8081/img/
 
 - Docker
 
-```
+```powershell
 wget -O /tmp/docker.png https://static-00.iconduck.com/assets.00/docker-icon-512x370-5593ilur.png
 
 ```
-```
+```powershell
 curl -F 'image=@/tmp/docker.png' localhost:8081/img/
 ```
 
@@ -60,11 +60,11 @@ curl -F 'image=@/tmp/docker.png' localhost:8081/img/
 
 - Kubernetes
 
-```
+```powershell
 wget -O /tmp/kub.png https://static-00.iconduck.com/assets.00/kubernetes-icon-512x499-3mjeet3c.png
 
 ```
-```
+```powershell
 curl -F 'image=@/tmp/kub.png' localhost:8081/img/
 ```
 
@@ -72,10 +72,10 @@ curl -F 'image=@/tmp/kub.png' localhost:8081/img/
 
 - AWS
 
-```
+```powershell
 wget -O /tmp/aws.png https://static-00.iconduck.com/assets.00/aws-icon-512x306-hz71jncq.png
 ```
-```
+```powershell
 curl -F 'image=@/tmp/aws.png' localhost:8081/img/
 ```
 
