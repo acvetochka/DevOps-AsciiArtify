@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Перевіряємо кількість аргументів, які передані скрипту
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <namespace> <command>" >&2
+    exit 1
+fi
+
+RESOURCE_TYPE=$0
+NAMESPACE=$1
+COMMAND=$2
+
+# Отримуємо статистику використання ресурсів з Kubernetes
+kubectl $COMMAND $RESOURCE_TYPE -n $NAMESPACE | tail -n +2 | while read line
+do
+  # Виділяємо інформацію про використання CPU та пам'яті з виводу
+  NAME=$(echo $line | awk '{print $1}')
+  CPU=$(echo $line | awk '{print $2}')
+  MEMORY=$(echo $line | awk '{print $3}')
+
+  # Виводимо статистику на консоль
+  echo "$RESOURCE_TYPE, $NAMESPACE, $NAME, $CPU, $MEMORY"
+done
